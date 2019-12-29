@@ -50,6 +50,24 @@ uma Action é acionada e um reducer verifica o tipo da Action para então manipu
 
 axios/fetch -> Bibliotecas utilizadas para fazer chamadas a API Rest
 
+-> Instalar pacote create-react-app
+npm install -g create-react-app 
+// Estrutura pronta e configurada para trabalhar com reactJS com as 
+// últimas atualizações de ecma e transpilar js para navegadores mais
+// antigos (webpack, babel) 
+
+-> Criar projeto reactJS
+create-react-app nomeProjeto
+// O projeto gerado possui uma estrutura de pastas prontas. 
+// A pasta node_modules contém todas as depedências do projeto 
+// A pasta public contém os arquivos públicos que estaram acessíveis 
+// para o usuário da aplicação 
+// A pasta src é onde ficará toda a codificação da aplicação. A partir da pastas
+// podem ser destacados dois arquivos principais:
+// App.js - contém um componente genérico e inicial da aplicação básica - hello world
+// index.js - Arquivo principal da aplicação que é executado assim que a aplicação é iniciado
+// A partir do arquivo principal é chamada o componente genérico App.js 
+
 -> Como o ReactJS funciona?
 Basicamente, o ReactJS utiliza conceitos de componentes que
 que são a base para construção das aplicações 
@@ -60,14 +78,15 @@ A aplicação é formada por um conjunto de componentes, onde, um componente pod
 ser formado por outros componentes menores. 
 
 -> Por que é importante usar componentes?
-Para separar responsabilidades e aumentar a reutilização de código
+Para separar responsabilidades e aumentar a reutilização de código. 
+Geralmente é uma classe que extende a classe Component do React.
+Basicamente possui 3 partes:
+- Conjunto de parte visual - HTML
+- Parte funcional - Manipulações com Javascript
+- Estilização - Estilos de CSS
+Um componente irá existir quando se poder encapsular esses 3 elementos, 
+representa uma parte de lógica, estrutura e estilização
 
--> Instalar pacote create-react-app
-npm install -g create-react-app 
-// Estrutura pronta e configurada para transpilar js para navegadores mais
-// antigos (webpack, babel) 
-
--> 
-
-
+Importante => Todo componente possui um método obrigatório chamado render() que
+retorna todo conteúdo JSX do componente.
 
