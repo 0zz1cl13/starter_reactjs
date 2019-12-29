@@ -1,0 +1,73 @@
+-> O que é ReactJS?
+É uma biblioteca pra construir a interface (frontend) de 
+aplicações web de forma organizada com uma estrutura 
+própria da biblioteca e recursos de seu ecossistema.
+
+-> Quais elementos formam o ecossistema?
+React -> biblioteca para criação da interface
+JSX -> É uma extensão de JS que permite escrever código
+HTML dentro do Javascript
+ES2015 -> Especificação que insere novos recursos no JS
+Webpack -> Empacotador de módulos Javascript que reune todos as depedências 
+do projeto. 
+Flux -> Arquitetura baseada nos elementos: Action, Dispatcher, Store, View
+--> View 
+Responsáveis por permitir a interação do usuário com a aplicação e 
+apresentar
+seu estado atual
+--> Action
+As actions representam as ações que o usuário realiza nas views.
+São objetos que contém o tipo de ação (ex: ADICIONAR_AO_CONTADOR)  junto a 
+nova informação que será guardada pela aplicação.
+--> Dispatcher
+Se encarrega de enviar as Actions para o Store da aplicação
+--> Store 
+É onde é feita as implementações das Actions, ou seja, enquanto as actions
+representam o tipo de ação e carregam a nova informação, as Stores realizam 
+toda a lógica de implementação das Actions. Quando Action realiza uma operação ela
+atualizará o estado da aplicação com o novo valor que deve ser renderizado pela view
+Redux -> É uma implementação otmizada do Flux e muito utilizada como padrão de projeto
+em React. Possui três principios básicos:
+--> Um único ponto de verdade: Todo o estado da aplicação é mantido em apenas 
+um único objeto chamado Store. 
+--> O estado é imutável: O estado da aplicação é inalteráel, a única maneira
+de afeta-lo é emitindo uma Action com a mudança. 
+--> Mudanças são feitas apenas por funções puras: Reducers recebem as Actions emitidas
+e aplicam-na ao estado, sempre retornando um novo estado. 
+
+--> Estado 
+Representa o conjunto de dados da aplicação no momento em
+que está está rodando no lado do cliente. Qualquer alteração nestes dados, implicam
+na mundança para um novo estado.
+--> Views
+É a parte visual que fica disponível para usuário consultar os dados (estado) e realizar ações.
+Actions: São objetos que servem para transmitir o que será enviado da view para store.
+--> Reducers
+Enquanto as Actions servem geralmente para ouvir ações do usuário e transmitir para Store. 
+Os Reducers servem para mudar o estado da aplicação a partir de uma Action, ou seja,
+uma Action é acionada e um reducer verifica o tipo da Action para então manipular a Store da aplicação.
+--> Store: Mantém o estado da aplicação 
+
+axios/fetch -> Bibliotecas utilizadas para fazer chamadas a API Rest
+
+-> Como o ReactJS funciona?
+Basicamente, o ReactJS utiliza conceitos de componentes que
+que são a base para construção das aplicações 
+
+-> O que é um componente? 
+Componente representa uma parte da aplicação que tem somente uma função. 
+A aplicação é formada por um conjunto de componentes, onde, um componente pode 
+ser formado por outros componentes menores. 
+
+-> Por que é importante usar componentes?
+Para separar responsabilidades e aumentar a reutilização de código
+
+-> Instalar pacote create-react-app
+npm install -g create-react-app 
+// Estrutura pronta e configurada para transpilar js para navegadores mais
+// antigos (webpack, babel) 
+
+-> 
+
+
+
