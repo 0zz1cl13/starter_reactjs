@@ -133,4 +133,108 @@ body {
 }
 // Para utiizar a estilização, basta importá-la no arquivo App.js 
 
+-> Instalar axios
+yarn install axios 
+// Biblioteca que permite fazer o consumo de APIs Rest
+// Após feita as instalação do axios, é preciso criar uma 
+// pasta src/services e criar um arquivo api.js para disponibilizar
+// o acesso a API através desse serviço
+// A ideia é criar um arquivo de configuração que deixará 
+// disponível métodos de acesso a API 
 
+-> Configurar api.js 
+// src/services/api.js 
+import axios from 'axios';
+
+const api = axios.create({
+  baseUrl: 'https://localhost:3001/api'
+});
+
+export default api;
+// Após configurar a url de acesso a API, basta exportá-la
+// para ser utilizada por outros componentes da aplicação que irão consumir a API
+
+-> Organizando o projeto 
+Como o projeto terá várias páginas, como por exemplo: página de listagem
+de produtos, página de detalhe do produto e etc. 
+Pode se criar uma pasta chamada pages dentro do src (src/pages/) que conterá
+as páginas da aplicação. 
+No diretório src/pages, criar pasta main e index.js e importar o componente
+no arquivo principal para usar a página principal
+// /src/App.js 
+...
+<Header />
+<Main />
+...
+
+-> Obter lista de produtos 
+Para se obter a lista de produtos na página Main, primeiro deve-se 
+fazer a importação do serviço de api e realizar uma chamada a API com
+a rota de listagem de produtos.
+
+Para carregar os dados assim que o houver o carregamente da página, 
+pode se utilizar o método componentDidMout(); 
+Dentro do componente chamar um método do próprio componente que carrega
+os dados da API:
+
+// /src/pages/main/index.js 
+
+componentDidMout(){
+  this.nomeMetodo();
+} 
+
+// Método deve ser uma arrow function
+nomeMetodo = async () => {
+  // await carrega dados;
+}
+
+-> O que é Estado? 
+Em React, todo componente possui estado. O estado representa
+os valores da aplicação e é onde são armazenados os dados.
+Todo componente possui um objeto chamado state que guarda as informações
+do componente. 
+
+-> Declarando um dado no state 
+state = {
+  dada: []
+};
+
+-> Como armazenar ou preencher valores no componente?
+this.setState({ dado: valoresRecebido }); 
+
+-> Como acessar uma informação do estato?
+{this.state.dado};
+
+-> Como listar dados do estado? 
+{this.state.dado.map(dado => (
+  <h2 key={dado.id}>{dado.campo}</h2>
+))};
+// Importante -> A propriedade key é obrigatório e deve ser única 
+
+-> Instalar react-router-dom
+yarn add react-router-dom 
+Biblioteca para gerenciar/navegação as rotas da aplicação
+
+-> Como utilizar o react-router-dom? 
+Criar arquivo de rotas na pasta src chamado routes.js.
+No arquivo deve-se importar 3 recursos principais: 
+1) BrowserRouter - Indica que a rota virá do navegador (browser)
+2) Switch - Acessa apenas uma rota por vez 
+3) Router - Indica a rota e o componente que será renderizado
+// src/routse.js
+<BrowserRouter>
+  <Switch>
+    <Route exact path="/" component={} />
+    <Route path="/products/:id" component={} />
+  </Switch>
+</BrowserRouter>
+
+-> Como fazer um link acionar uma rota
+Para fazer um link ir para uma rota é necessário importar 
+um pacote chamado Link.
+import Link from 'react-router-dom';
+// O pacote é parecido com a tag <a></a> do HTML. 
+<Link to='rota'>Alguma coisa<Link>
+
+-> Como acessar um parametro da URL? 
+const { id } = this.props.match.params;
