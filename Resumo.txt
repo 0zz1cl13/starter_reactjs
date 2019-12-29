@@ -90,3 +90,47 @@ representa uma parte de lógica, estrutura e estilização
 Importante => Todo componente possui um método obrigatório chamado render() que
 retorna todo conteúdo JSX do componente.
 
+-> Criar componente
+Criar pasta /src/componets 
+Na pasta de componentes, criar pasta com nome do componente /src/components/Header e criar
+um arquivo index.js pro componente. 
+
+-> Stateless components
+Forma de criar componentes através de funções 
+// Stateless
+const Header = () => (
+  <header id="main-header">JSHunt</header>
+);
+// Class 
+class Header extends Component {
+  render() {
+    <header id='main-header'>JSHunt</header>
+  }
+}
+
+-> Estilizar o Header
+Na pasta do componente Header, criar arquivo style.css 
+// style.css 
+
+header#main-header {
+  // estilizações... 
+}
+
+// Para utilizar o arquivo de estilização, basta importar no index.js
+// src/components/Header/index.js 
+import './style.css';
+...
+
+-> Fazer uma estilização global
+Para aplicar estilos genéricos, basta criar arquivo styles.css na pasta src 
+// src/styles.css 
+* {
+  // estilizações
+}
+
+body {
+  // estilizações
+}
+// Para utiizar a estilização, basta importá-la no arquivo App.js 
+
+
